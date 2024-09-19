@@ -10,3 +10,29 @@
   h1 {
     font-size: 28pt;
   }
+
+  .icon-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #555;
+    overflow: auto;
+  }
+
+  .icon-bar a {
+    float: left;
+    text-align: center;
+    width: calc(100% / 6);
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 28px;
+  }
+
+  .icon-bar a:hover {
+    background-color: #000;
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
