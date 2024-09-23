@@ -23,15 +23,17 @@
             <option value="12:00">12:00</option>
         </select>
 
-        <br><br>
-
-        <div id="timeOfDay">
+        <div id="timeGroup">
             <input type="radio" id="am" value="AM" name="timeOfDay">
             <label for="am">AM</label><br>
             <input type="radio" id="pm" value="PM" name="timeOfDay">
             <label for="pm">PM</label>
         </div>
+
+        <button type="button" onclick="submitChoices()" id="submitChoices">Submit</button>
         
+        <div id="choiceOutput"></div>
+
 
         <div class="icon-bar">
             <a href="index.html">Text</a>
@@ -42,15 +44,17 @@
             <a href="lr.html">LR</a>
         </div>
 
-        <br><br>
-
-        <button type="button" onclick="submitChoices()">Submit</button>
-        
         <script>
             function submitChoices() {
                 var t = document.getElementById('time').value;
-                var timeOfDay = document.querySelector('input[name="timeOfDay"]:checked').value
-                alert("It is " + t + " " + timeOfDay)
+                let checkRadio = document.querySelector('input[name="timeOfDay"]:checked')
+
+                if (checkRadio != null) {
+                    document.getElementById('choiceOutput').innerHTML = "It is " + t + " " + checkRadio.value
+                }
+                else {
+                    alert('Please select AM or PM')
+                }
             }
         </script>
 
