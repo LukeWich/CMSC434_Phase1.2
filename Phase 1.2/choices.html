@@ -1,62 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Phase 1.2 webapp</title>
-    <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
-</head>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Phase 1.2 Choices Tab</title>
+        <link href="./resources/css/styles.css" type="text/css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="device">
 
-<body>
-    <div class="device">
+            <select name="time" id="time">
+                <option value="1:00">1:00</option>
+                <option value="2:00">2:00</option>
+                <option value="3:00">3:00</option>
+                <option value="4:00">4:00</option>
+                <option value="5:00">5:00</option>
+                <option value="6:00">6:00</option>
+                <option value="7:00">7:00</option>
+                <option value="8:00">8:00</option>
+                <option value="9:00">9:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+            </select>
 
-        <select name="time" id="time">
-            <option value="1:00">1:00</option>
-            <option value="2:00">2:00</option>
-            <option value="3:00">3:00</option>
-            <option value="4:00">4:00</option>
-            <option value="5:00">5:00</option>
-            <option value="6:00">6:00</option>
-            <option value="7:00">7:00</option>
-            <option value="8:00">8:00</option>
-            <option value="9:00">9:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-        </select>
+            <div id="timeGroup">
+                <input type="radio" id="am" value="AM" name="timeOfDay">
+                <label for="am">AM</label><br>
+                <input type="radio" id="pm" value="PM" name="timeOfDay">
+                <label for="pm">PM</label>
+            </div>
 
-        <div id="timeGroup">
-            <input type="radio" id="am" value="AM" name="timeOfDay">
-            <label for="am">AM</label><br>
-            <input type="radio" id="pm" value="PM" name="timeOfDay">
-            <label for="pm">PM</label>
-        </div>
-
-        <button type="button" onclick="submitChoices()" id="submitChoices">Submit</button>
-        
-        <div id="choiceOutput"></div>
+            <button type="button" onclick="submitChoices()" id="submitChoices">Submit</button>
+            
+            <div id="choiceOutput"></div>
 
 
-        <div class="icon-bar">
-            <a href="text.html">Text</a>
-            <a href="choices.html" class="active">Choices</a>
-            <a href="todo.html">ToDo</a>
-            <a href="profile.html">Profile</a>
-            <a href="colors.html">Colors</a>
-            <a href="lr.html">LR</a>
-        </div>
+            <div class="icon-bar">
+                <a href="text.html">Text</a>
+                <a href="choices.html" class="active">Choices</a>
+                <a href="todo.html">ToDo</a>
+                <a href="profile.html">Profile</a>
+                <a href="colors.html">Colors</a>
+                <a href="lr.html">LR</a>
+            </div>
 
-        <script>
-            function submitChoices() {
-                var t = document.getElementById('time').value;
-                let checkRadio = document.querySelector('input[name="timeOfDay"]:checked')
+            <script>
+                function submitChoices() {
+                    var t = document.getElementById('time').value;
+                    let checkRadio = document.querySelector('input[name="timeOfDay"]:checked')
 
-                if (checkRadio != null) {
-                    document.getElementById('choiceOutput').innerHTML = "It is " + t + " " + checkRadio.value
+                    if (checkRadio != null) {
+                        document.getElementById('choiceOutput').innerHTML = "It is " + t + " " + checkRadio.value
+                    }
+                    else {
+                        alert('Please select AM or PM')
+                    }
                 }
-                else {
-                    alert('Please select AM or PM')
-                }
-            }
-        </script>
+            </script>
 
-    </div>
-</body></html>
+        </div>
+    </body>
+</html>
