@@ -10,6 +10,43 @@
         <div class="device">
             <h1>ToDo</h1>
 
+    
+            <div class="todo-container">
+                <input type="text" id="new-task" placeholder="Add a new task...">
+                <button onclick="addTask()">Add</button>
+            </div>
+    
+            <ul id="task-list"></ul>
+        
+    
+        <script>
+            function addTask() {
+                var taskInput = document.getElementById('new-task');
+                var taskText = taskInput.value.trim();
+    
+                if (taskText === "") {
+                    alert("Please enter a task.");
+                    return;
+                }
+    
+                var taskList = document.getElementById('task-list');
+    
+                var li = document.createElement('li');
+                li.innerHTML = taskText + ' <button class="delete-btn" onclick="deleteTask(this)">Delete</button>';
+                li.onclick = function() {
+                    li.classList.toggle('done');
+                };
+    
+                taskList.appendChild(li);
+                taskInput.value = "";
+            }
+    
+            function deleteTask(button) {
+                var li = button.parentNode;
+                li.parentNode.removeChild(li);
+            }
+        </script>
+
             <div class="icon-bar">
                 <a href="text.html">Text</a>
                 <a href="choices.html">Choices</a>
