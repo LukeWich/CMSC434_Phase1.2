@@ -90,13 +90,28 @@
     text-align: center;
   }
 
+  #popup {
+    display: none;
+    height: 150px;
+    width: 100%;
+    margin-top: 525px; 
+    position: absolute;
+    background-color: #ffbbbb;
+    color: rgb(168, 1, 1);
+  }
 
+  #text-popup {
+    margin-top: 45px;
+    font-size: 35pt;
+    text-align: center;
+  }
 
-
-
-  
-
-  /* Text tab CSS */
+  #text-close {
+    margin-top: -145px;
+    font-size: 30pt;
+    text-align: right;
+    cursor: pointer;
+  }
 
 
   /* Choices tab CSS */
@@ -145,6 +160,17 @@
   }
 
   /* ToDo tab CSS */
+
+
+
+  /* Text tab CSS */
+  #scroll-text {
+    width: 575px;
+    height: 650px;
+    overflow-y: scroll;
+    padding-left: 30px;
+    font-size: 20pt;
+  }
 
 
   
